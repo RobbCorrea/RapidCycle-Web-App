@@ -3,8 +3,8 @@ import logo from './logo.svg';
 import './App.scss';
 
 function App() {
-  return ( <
-    h1 > Rapid Cycle < /h1>
+  return ( < div > <
+    h1 className = "App" > Rapid Cycle < /h1></div >
   );
 }
 

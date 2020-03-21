@@ -1,7 +1,5 @@
-.App {
-    color: red;
-}
+@import "./scss/_variables";
 
-.app h1 {
-    color: red
+.App {
+    color: $neutral-1;
 }
