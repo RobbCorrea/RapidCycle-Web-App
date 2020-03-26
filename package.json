@@ -7,7 +7,6 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "antd": "^4.0.4",
-    "grommet": "^2.11.2",
     "node": "^13.10.1",
     "node-sass": "^4.13.1",
     "react": "^16.13.1",

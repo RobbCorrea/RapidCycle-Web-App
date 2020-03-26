@@ -1,18 +1,22 @@
 import React from "react";
 import "./App.scss";
-import { DatePicker } from "antd";
+import { DatePicker, Tooltip } from "antd";
 
 function App() {
+  const dateTest = (date, dateString) => {
+    console.log(date, dateString);
+  };
+  const text = "Tooltip tag";
+
   return (
     <>
-      <div>
+      <Tooltip placement="leftBottom" title={text}>
         <h1 className="App">
-          {" "}
           Rapid Cycle <span>App</span>
         </h1>
-      </div>
+      </Tooltip>
       <div>
-        <DatePicker />
+        <DatePicker onChange={dateTest} />
         <br />
         <DatePicker picker="week" />
         <br />
