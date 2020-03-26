@@ -1,5 +1,16 @@
-@import "./scss/_variables";
+@import "./scss/index.scss";
+
+/*
+.App {
+  h1 {
+    color: #00873d;
+    span {
+      font-weight: 100;
+    }
+  }
+}
+*/
 
 .App {
-    color: $neutral-1;
+  color: #00873d;
 }

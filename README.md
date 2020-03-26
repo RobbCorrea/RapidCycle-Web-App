@@ -9,10 +9,9 @@ pay for your scraps and pick up your trash. <br />
 It's free, it's fast, it's clean.
 
 ### Try it yourself.
-
 Enjoy the RC experience using this test user.<br />
 
 User: loveto<br />
 Password: recycle<br />
 
-### Try it yourself.
+### Notice you don't require a user to enjoy RapidCycle.
