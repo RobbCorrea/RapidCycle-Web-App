@@ -8,7 +8,7 @@ import Contacts from "./pages/Contacts.js"; */
 import routes from "./config/routes.js";
 import RouteWithSubRoutes from "./components/RouteWSubroutes.js";
 
-import "./App.scss";
+import "./scss/App.scss";
 
 function App() {
   return (
