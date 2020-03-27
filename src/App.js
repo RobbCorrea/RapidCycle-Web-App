@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AdminHome from "./pages/Admin";
 import SignIn from "./pages/Admin/SignIn.js";
 import Home from "./pages/Home.js";
-import Contacts from "./pages/Contacs.js"; */
+import Contacts from "./pages/Contacts.js"; */
 import routes from "./config/routes.js";
 import RouteWithSubRoutes from "./components/RouteWSubroutes.js";
 

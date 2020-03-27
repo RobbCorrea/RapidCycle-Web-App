@@ -2,8 +2,6 @@ import React from "react";
 import { Route } from "react-router-dom";
 
 function RouteWithSubRoutes(route) {
-  //toDelete
-  console.log(route);
   return (
     <Route
       path={route.path}
