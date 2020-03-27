@@ -1,6 +1,5 @@
 //LayoutCollector.js is Admin or LayoutAdmin
 import React from "react";
-import { Route } from "react-router-dom";
 import { Layout } from "antd";
 //Functional Component
 import LoadRoutes from "../components/LoadRoutes";

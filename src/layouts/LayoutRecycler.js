@@ -1,6 +1,5 @@
 //LayoutRecycler.js is Basic or LayoutBasic
 import React from "react";
-import { Route } from "react-router-dom";
 import { Layout } from "antd";
 
 //Importing CSS

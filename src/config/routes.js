@@ -11,6 +11,9 @@ import AdminSignIn from "../pages/Admin/SignIn";
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 
+//Error
+import Error404 from "../pages/404Error";
+
 //It's done. Now I can add any route I want following my own object template
 //and all routes shall work. It will render whichever route I type
 //on the browser. After I code a render for it, of course.
@@ -29,6 +32,9 @@ const routes = [
         path: "/admin/login",
         component: AdminSignIn,
         exact: true
+      },
+      {
+        component: Error404
       }
     ]
   },
@@ -46,6 +52,9 @@ const routes = [
         path: "/contact",
         component: Contact,
         exact: true
+      },
+      {
+        component: Error404
       }
     ]
   }
