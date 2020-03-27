@@ -1,30 +1,24 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+/* import Admin from "./pages/Admin";
+import AdminHome from "./pages/Admin";
+import SignIn from "./pages/Admin/SignIn.js";
+import Home from "./pages/Home.js";
+import Contacts from "./pages/Contacs.js"; */
+import routes from "./config/routes.js";
+import RouteWithSubRoutes from "./components/RouteWSubroutes.js";
+
 import "./App.scss";
-import { DatePicker, Tooltip } from "antd";
 
 function App() {
-  const dateTest = (date, dateString) => {
-    console.log(date, dateString);
-  };
-  const text = "Tooltip tag";
-
   return (
-    <>
-      <Tooltip placement="leftBottom" title={text}>
-        <h1 className="App">
-          Rapid Cycle <span>App</span>
-        </h1>
-      </Tooltip>
-      <div>
-        <DatePicker onChange={dateTest} />
-        <br />
-        <DatePicker picker="week" />
-        <br />
-        <DatePicker picker="month" />
-        <br />
-        <DatePicker picker="year" />
-      </div>
-    </>
+    <Router>
+      <Switch>
+        {routes.map((route, index) => (
+          <RouteWithSubRoutes key={index} {...route} />
+        ))}
+      </Switch>
+    </Router>
   );
 }
 
