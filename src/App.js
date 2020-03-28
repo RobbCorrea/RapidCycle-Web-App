@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 /* import Admin from "./pages/Admin";
 import AdminHome from "./pages/Admin";
 import SignIn from "./pages/Admin/SignIn.js";

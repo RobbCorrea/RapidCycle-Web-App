@@ -3,7 +3,7 @@ import React from "react";
 import { Layout } from "antd";
 //Functional Component
 import LoadRoutes from "../components/LoadRoutes";
-
+//SCSS
 import "../scss/LayoutCollector.scss";
 
 export default function LayoutCollector({ routes }) {
@@ -11,13 +11,17 @@ export default function LayoutCollector({ routes }) {
 
   return (
     <Layout>
-      <h2>Menu sider LayoutCollector</h2>
-      <Layout>
-        <Header>RapidCycle</Header>
-        <Content>
+      {/*TO DO: Menu Sider*/}
+      <Layout className="layout-admin">
+        <Header className="layout-admin__header">
+          {/* TO DO: Menu Top */}RapidCycle
+        </Header>
+        <Content className="layout-admin__content">
           <LoadRoutes routes={routes}></LoadRoutes>
         </Content>
-        <Footer>E-SkyTech's RapidCycle all rights reserved</Footer>
+        <Footer className="layout-admin__footer">
+          E-SkyTech's RapidCycle all rights reserved
+        </Footer>
       </Layout>
     </Layout>
   );
