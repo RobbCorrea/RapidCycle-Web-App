@@ -1,8 +1,9 @@
 //LayoutCollector.js is Admin or LayoutAdmin
 import React from "react";
 import { Layout } from "antd";
-//Functional Component
+//Functional Components
 import LoadRoutes from "../components/LoadRoutes";
+import MenuTop from "../components/Collector/MenuTop";
 //SCSS
 import "../scss/LayoutCollector.scss";
 
@@ -14,7 +15,7 @@ export default function LayoutCollector({ routes }) {
       {/*TO DO: Menu Sider*/}
       <Layout className="layout-admin">
         <Header className="layout-admin__header">
-          {/* TO DO: Menu Top */}RapidCycle
+          <MenuTop />
         </Header>
         <Content className="layout-admin__content">
           <LoadRoutes routes={routes}></LoadRoutes>
