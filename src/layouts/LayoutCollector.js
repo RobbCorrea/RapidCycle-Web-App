@@ -11,12 +11,15 @@ import "../scss/LayoutCollector.scss";
 export default function LayoutCollector({ routes }) {
   //Or const {routes} = props;
   const { Header, Content, Footer } = Layout;
-  const [menuCollapsed, setMenuCollapsed] = useState(false);
+  const [menuCollapsed, setMenuCollapsed] = useState(true);
 
   return (
     <Layout>
       <CollectorSider menuCollapsed={menuCollapsed} />
-      <Layout className="layout-admin">
+      <Layout
+        className="layout-admin"
+        style={{ marginLeft: menuCollapsed ? "80px" : "200px" }}
+      >
         <Header className="layout-admin__header">
           <MenuTop
             menuCollapsed={menuCollapsed}
