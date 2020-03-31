@@ -5,7 +5,8 @@ import RCLeafLogo from "../../../assets/images/smallDiamondLeaf.png";
 //SCSS
 import "../../../scss/MenuTop.scss";
 
-function MenuTop() {
+function MenuTop(props) {
+  console.log(props);
   return (
     <div className="menu-top">
       <div className="menu-top__left">
