@@ -16,7 +16,7 @@ function MenuTop(props) {
           src={RCLeafLogo}
           alt="Rapid Cycle Green Leaf Logo"
         />
-        <Button type="link" onClick={() => setMenuCollapsed(true)}>
+        <Button type="link" onClick={() => setMenuCollapsed(!menuCollapsed)}>
           <MenuUnfoldOutlined />
         </Button>
       </div>

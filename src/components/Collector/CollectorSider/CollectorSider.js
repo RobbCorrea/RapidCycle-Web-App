@@ -11,6 +11,7 @@ import { HomeOutlined, MenuOutlined } from "@ant-design/icons";
 import "../../../scss/CollectorSider.scss";
 
 function MenuSider(props) {
+  console.log(props);
   const { menuCollapsed } = props;
   const { Sider } = Layout;
   console.log(props);

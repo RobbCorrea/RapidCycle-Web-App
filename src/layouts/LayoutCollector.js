@@ -11,7 +11,7 @@ import "../scss/LayoutCollector.scss";
 export default function LayoutCollector({ routes }) {
   //Or const {routes} = props;
   const { Header, Content, Footer } = Layout;
-  const { menuCollapsed, setMenuCollapsed } = useState(false);
+  const [menuCollapsed, setMenuCollapsed] = useState(false);
 
   return (
     <Layout>
