@@ -14,12 +14,17 @@ export default function SignIn() {
         <h1 className="sign-in__content-logo">
           <img src={Logo} alt="Rapid Cycle Diamond Leaf Logo" />
         </h1>
-        <Tabs type="card">
-          <TabPane tab={<span>Entrar</span>} key="1">
-            Componente LoginForm
-          </TabPane>
-        </Tabs>
-        <div className="sign-in__content-tabs"></div>
+
+        <div className="sign-in__content-tabs">
+          <Tabs type="card">
+            <TabPane tab={<span>Log in</span>} key="1">
+              Access your personal Rapid Cycle. Accede a tu propio Rapid Cycle.
+            </TabPane>
+            <TabPane tab={<span>New Recycler</span>} key="2">
+              Register as a new recycler. Regístrate como reciclador.
+            </TabPane>
+          </Tabs>
+        </div>
       </Content>
     </Layout>
   );
