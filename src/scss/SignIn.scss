@@ -1,0 +1,15 @@
+@import "./index.scss";
+
+.sign-in {
+  background-image: url();
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+}
