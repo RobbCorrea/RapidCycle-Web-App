@@ -23,7 +23,6 @@
 
     &-tabs {
       background-color: $background-light;
-
       .ant-tabs {
         width: 90vw;
         @media (min-width: $media-breakpoint-up-lg) {
@@ -43,7 +42,7 @@
         height: 60px !important;
         text-align: center;
         font-size: 0em + 19px / $defaultFontSize;
-        border-top: 4px solid $border-grey !important;
+        border-top: 4px solid $border-grey-dark !important;
         border-radius: 0 !important;
         margin: 0 !important;
         @media (min-width: $media-breakpoint-up-lg) {
@@ -52,7 +51,7 @@
         }
 
         &:hover {
-          color: $font-grey-dark;
+          color: $primary-hover;
         }
         &:before {
           content: none;
@@ -65,8 +64,8 @@
         }
       }
       .ant-tabs-tab-active {
-        color: $menu-color !important;
-        border-top: 4px solid $menu-color !important;
+        color: $brand-main-blue !important;
+        border-top: 4px solid $brand-main-blue !important;
         border-radius: 0 !important;
         border-right: 0 !important;
         border-left: 0 !important;

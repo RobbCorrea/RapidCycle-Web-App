@@ -1,0 +1,29 @@
+@import "./index.scss";
+@import "./responsiveness.scss";
+@import "./fonts.scss";
+
+.register-form {
+  text-align: left;
+
+  //Icons inside inputs
+  .ant-form-item {
+    &:nth-child(3),
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  //
+  &__input {
+    .ant-input-prefix {
+      i {
+        font-size: 0em + 22px / $defaultFontSize;
+      }
+    }
+  }
+}
+
+/* @media (min-width: $media-breakpoint-up-lg) {
+    width: 220px;
+    font-size: 0em + 23px / $defaultFontSize;
+  } */
