@@ -45,7 +45,7 @@ function RegisterForm() {
           He leído la política de privacidad y la acepto.
         </Checkbox>
       </Form.Item>
-      <Button htmlType="submit" className="register-form_button">
+      <Button htmlType="submit" className="register-form__button">
         Crear cuenta
       </Button>
     </Form>

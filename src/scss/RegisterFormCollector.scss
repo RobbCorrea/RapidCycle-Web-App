@@ -5,7 +5,7 @@
 .register-form {
   text-align: left;
 
-  //Icons inside inputs
+  //Icons inside inputs Creo que no lo detecta
   .ant-form-item {
     &:nth-child(3),
     &:last-of-type {
@@ -19,6 +19,34 @@
       i {
         font-size: 0em + 22px / $defaultFontSize;
       }
+    }
+
+    input {
+      font-size: 0em + 20px / $defaultFontSize;
+      padding: 5px 5px 5px 40px !important; //CONSIDER @MEDIA HERE FOR RESPONSIVENESS
+      &:focus {
+        border-color: $menu-color;
+        box-shadow: none;
+      }
+    }
+  }
+
+  &__button {
+    width: 100%;
+    font-size: 0em + 22px / $defaultFontSize;
+    background-color: $menu-color;
+    color: $font-light;
+    height: 42px;
+
+    &:hover {
+      background-color: $primary-hover;
+      color: $font-light;
+    }
+    &:focus,
+    &:active {
+      background-color: $menu-color;
+      color: $font-light;
+      border: 0;
     }
   }
 }

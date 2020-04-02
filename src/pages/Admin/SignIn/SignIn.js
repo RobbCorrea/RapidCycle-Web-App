@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 //Components
 import RegisterForm from "../../../components/Collector/RegisterForm";
 //Ant Design components
@@ -16,7 +17,9 @@ export default function SignIn() {
     <Layout className="sign-in">
       <Content className="sign-in__content">
         <h1 className="sign-in__content-logo">
-          <img src={Logo} alt="Rapid Cycle Diamond Leaf Logo" />
+          <Link to={"/"}>
+            <img src={Logo} alt="Rapid Cycle Diamond Leaf Logo" />
+          </Link>
         </h1>
 
         <div className="sign-in__content-tabs">
