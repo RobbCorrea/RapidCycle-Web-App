@@ -7,6 +7,11 @@ import miniLeaf from "../../../assets/images/user.png";
 //SCSS
 import "../../../scss/index.scss";
 import "../../../scss/RegisterFormCollector.scss";
+//Utils
+import {
+  minLengthValidation,
+  emailValidation
+} from "../../../utils/formValidation";
 
 //Register Form Component for adding new waste collectors to collector profile.
 
@@ -16,6 +21,14 @@ function RegisterForm() {
     email: "",
     password: "",
     repeatPassword: "",
+    privacyPolicy: false
+  });
+
+  //validates inputs
+  const [formValid, setFormValid] = useState({
+    email: false,
+    password: false,
+    repeatPassword: false,
     privacyPolicy: false
   });
 
@@ -33,13 +46,40 @@ function RegisterForm() {
     }
   };
 
-  const register = e => {
-    e.preventDefault();
+  const inputValidation = e => {
+    const { type, name } = e.target;
+
+    if (type === "email") {
+      setFormValid({
+        ...formValid,
+        //pushes a name to the array
+        [name]: emailValidation(e.target)
+      });
+    }
+
+    if (type === "password") {
+      setFormValid({
+        ...formValid,
+        [name]: minLengthValidation(e.target, 6)
+      });
+    }
+
+    if (type === "checkbox") {
+      setFormValid({
+        ...formValid,
+        [name]: e.target.checked
+      });
+    }
+  };
+
+  //UPDATE
+  const register = () => {
+    console.log("Formulario enviado");
     console.log(inputs);
   };
 
   return (
-    <Form className="register-form" onSubmit={register} onChange={changeForm}>
+    <Form className="register-form" onFinish={register} onChange={changeForm}>
       <Form.Item>
         <Input
           prefix={<UserOutlined style={{ color: "rgba(40, 146, 215, 1)" }} />}
@@ -47,6 +87,7 @@ function RegisterForm() {
           name="email"
           placeholder="Correo electronico"
           className="register-form__input"
+          onChange={inputValidation}
           value={inputs.email}
         />
       </Form.Item>
@@ -57,6 +98,7 @@ function RegisterForm() {
           name="password"
           placeholder="Contraseña"
           className="register-form__input"
+          onChange={inputValidation}
           value={inputs.password}
         />
       </Form.Item>
@@ -67,11 +109,16 @@ function RegisterForm() {
           name="repeatPassword"
           placeholder="Repite tu contraseña"
           className="register-form__input"
+          onChange={inputValidation}
           value={inputs.repeatPassword}
         />
       </Form.Item>
       <Form.Item>
-        <Checkbox name="privacyPolicy" checked={inputs.privacyPolicy}>
+        <Checkbox
+          name="privacyPolicy"
+          onChange={inputValidation}
+          checked={inputs.privacyPolicy}
+        >
           He leído la política de privacidad y la acepto.
         </Checkbox>
       </Form.Item>
