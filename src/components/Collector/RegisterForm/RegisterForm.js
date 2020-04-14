@@ -16,7 +16,7 @@ import {
 //Register Form Component for adding new waste collectors to collector profile.
 
 function RegisterForm() {
-  //inputs stores the state, setInputs updates the state
+  //INPUTS (inputs stores the state, setInputs updates the state)
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -24,7 +24,7 @@ function RegisterForm() {
     privacyPolicy: false
   });
 
-  //validates inputs
+  //INPUT VALIDATION
   const [formValid, setFormValid] = useState({
     email: false,
     password: false,
@@ -76,6 +76,17 @@ function RegisterForm() {
   const register = () => {
     console.log("Formulario enviado");
     console.log(inputs);
+    const { email, password, repeatPassword, privacyPolicy } = formValid;
+    const passwordVal = inputs.password;
+    const repeatPassword = inputs.repeatPassword;
+
+    if (
+      !inputs.name ||
+      !passwordVal ||
+      !repeatPassword ||
+      !inputs.privacyPolicy
+    ) {
+    }
   };
 
   return (
