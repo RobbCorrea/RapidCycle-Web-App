@@ -75,14 +75,15 @@ function RegisterForm() {
   };
 
   //UPDATE
-  const register = () => {
-    /*     console.log("Formulario enviado");
+  const register = async e => {
+    /*  console.log("Formulario enviado");
         console.log(inputs); */
     const { email, password, repeatPassword, privacyPolicy } = formValid;
     const emailVal = inputs.email;
     const passwordVal = inputs.password;
     const repeatPasswordVal = inputs.repeatPassword;
     const privacyPolicyVal = inputs.privacyPolicy;
+
     if (!emailVal || !passwordVal || !repeatPasswordVal || !privacyPolicyVal) {
       notification["error"]({
         message: "Todos los campos son obligatorios."
@@ -93,13 +94,43 @@ function RegisterForm() {
           message: "Las contraseñas deben ser iguales."
         });
       } else {
-        const result = signUpApi(inputs);
-        /* TO DO: Conectar con el API y registrar el usuario.
-        notification["success"]({
-          message: "Has creado tu cuenta."
-        }); */
+        //Establishing connection with the API & registering the user.
+        const result = await signUpApi(inputs);
+        //console.log(result);
+        if (!result.ok) {
+          notification["error"]({
+            message: result.message
+          });
+        } else {
+          notification["success"]({
+            message: result.message
+          });
+          resetForm();
+        }
       }
     }
+  };
+
+  const resetForm = () => {
+    const inputs = document.getElementsByTagName("input");
+    for (let i = 0; i < inputs.length; i++) {
+      inputs[i].classList.remove("success");
+      inputs[i].classList.remove("error");
+    }
+
+    setInputs({
+      email: "",
+      password: "",
+      repeatPassword: "",
+      privacyPolicy: false
+    });
+
+    setFormValid({
+      email: false,
+      password: false,
+      repeatPassword: false,
+      privacyPolicy: false
+    });
   };
 
   return (
