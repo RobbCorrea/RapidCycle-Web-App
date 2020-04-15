@@ -12,11 +12,12 @@ export function signUpApi(data) {
 
   console.log(data);
 
-  fetch(url, params)
-    .then(response => {
-      return response.json();
+  fetch(url, params).then(response => {
+    console.log(response);
+    /* return response.json();
     })
     .then(result => {
       return result;
-    });
+    }); */
+  });
 }
