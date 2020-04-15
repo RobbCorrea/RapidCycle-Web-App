@@ -2,6 +2,8 @@ import React, { useState } from "react";
 //Ant Design components
 import { Form, Input, Button, Checkbox, notification } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
+//API Config
+import { signUpApi } from "../../../api/user";
 //Assets
 import miniLeaf from "../../../assets/images/user.png";
 //SCSS
@@ -74,18 +76,29 @@ function RegisterForm() {
 
   //UPDATE
   const register = () => {
-    console.log("Formulario enviado");
-    console.log(inputs);
+    /*     console.log("Formulario enviado");
+        console.log(inputs); */
     const { email, password, repeatPassword, privacyPolicy } = formValid;
+    const emailVal = inputs.email;
     const passwordVal = inputs.password;
-    const repeatPassword = inputs.repeatPassword;
-
-    if (
-      !inputs.name ||
-      !passwordVal ||
-      !repeatPassword ||
-      !inputs.privacyPolicy
-    ) {
+    const repeatPasswordVal = inputs.repeatPassword;
+    const privacyPolicyVal = inputs.privacyPolicy;
+    if (!emailVal || !passwordVal || !repeatPasswordVal || !privacyPolicyVal) {
+      notification["error"]({
+        message: "Todos los campos son obligatorios."
+      });
+    } else {
+      if (passwordVal !== repeatPasswordVal) {
+        notification["error"]({
+          message: "Las contraseñas deben ser iguales."
+        });
+      } else {
+        const result = signUpApi(inputs);
+        /* TO DO: Conectar con el API y registrar el usuario.
+        notification["success"]({
+          message: "Has creado tu cuenta."
+        }); */
+      }
     }
   };
 
