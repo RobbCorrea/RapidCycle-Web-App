@@ -10,7 +10,7 @@ export function signUpApi(data) {
     }
   };
 
-  console.log(data);
+  //console.log(data);
 
   return fetch(url, params)
     .then(response => {
@@ -31,5 +31,32 @@ export function signUpApi(data) {
     })
     .catch(err => {
       return { ok: false, message: err.message };
+    });
+}
+
+export function singInApi(data) {
+  const url = `${basePath}/${apiVersion}/sign-in`;
+  console.log(data);
+  console.log(url);
+  const params = {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  };
+
+  return fetch(url, params)
+    .then(response => {
+      console.log(response);
+      return response.json();
+    })
+    .then(result => {
+      console.log(result);
+
+      return result;
+    })
+    .catch(err => {
+      return err.message;
     });
 }

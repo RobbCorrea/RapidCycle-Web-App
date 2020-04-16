@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 //Components
+import LoginForm from "../../../components/Collector/LoginForm";
 import RegisterForm from "../../../components/Collector/RegisterForm";
 //Ant Design components
 import { Layout, Tabs } from "antd";
@@ -25,7 +26,7 @@ export default function SignIn() {
         <div className="sign-in__content-tabs">
           <Tabs type="card">
             <TabPane tab={<span>Entrar</span>} key="1">
-              Accede a tu propio RapidCycle.
+              <LoginForm />
             </TabPane>
             <TabPane tab={<span>Nuevo Recolector</span>} key="2">
               <RegisterForm />
