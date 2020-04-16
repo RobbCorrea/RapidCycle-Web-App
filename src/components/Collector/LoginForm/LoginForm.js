@@ -1,8 +1,14 @@
+//React
 import React, { useState } from "react";
+//Ant Design Components
 import { Form, Input, Button, notification } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
-import { singInApi } from "../../../api/user";
+//Constants
+import { ACCESS_TOKEN, REFRESH_TOKEN } from "../../../utils/constants";
+//SCSS
 import "../../../scss/LoginForm.scss";
+//Sign Up to backend API
+import { singInApi } from "../../../api/user";
 
 export default function LoginForm() {
   const [inputs, setInputs] = useState({
@@ -17,8 +23,26 @@ export default function LoginForm() {
     });
   };
 
-  const login = () => {
-    singInApi(inputs);
+  const login = async () => {
+    const result = await singInApi(inputs);
+
+    if (result.message) {
+      notification["error"]({
+        message: result.message
+      });
+    } else {
+      const { accessToken, refreshToken } = result;
+      localStorage.setItem(ACCESS_TOKEN, accessToken);
+      localStorage.setItem(REFRESH_TOKEN, refreshToken);
+
+      notification["success"]({
+        message: "Login correcto."
+      });
+
+      window.location.href = "/admin";
+    }
+
+    console.log(result);
   };
 
   return (
