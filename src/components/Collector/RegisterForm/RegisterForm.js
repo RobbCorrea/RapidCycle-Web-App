@@ -78,7 +78,7 @@ function RegisterForm() {
   const register = async e => {
     /*  console.log("Formulario enviado");
         console.log(inputs); */
-    const { email, password, repeatPassword, privacyPolicy } = formValid;
+    //const { email, password, repeatPassword, privacyPolicy } = formValid;
     const emailVal = inputs.email;
     const passwordVal = inputs.password;
     const repeatPasswordVal = inputs.repeatPassword;

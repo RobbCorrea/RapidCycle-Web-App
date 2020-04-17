@@ -11,9 +11,16 @@ import Logo from "../../../assets/images/smallDiamondLeaf.png";
 //SCSS
 import "../../../scss/SignIn.scss";
 
+import { getAccessTokenApi } from "../../../api/auth";
+
 export default function SignIn() {
   const { Content } = Layout;
   const { TabPane } = Tabs;
+
+  if (getAccessTokenApi) {
+    return <Redirect to="/admin" />;
+  }
+
   return (
     <Layout className="sign-in">
       <Content className="sign-in__content">

@@ -53,6 +53,7 @@ export function refreshAccessTokenApi(refreshToken) {
     });
 }
 
+//No tokens, no logged in user. So it logs out.
 export function logout() {
   localStorage.removeItem(ACCESS_TOKEN);
   localStorage.removeItem(REFRESH_TOKEN);
@@ -62,6 +63,6 @@ function willExpireToken(token) {
   const seconds = 60;
   const metaToken = jwtDecode(token);
   const { exp } = metaToken;
-  const now = (Date.now() + seconds) / 1000;
-  return now > exp;
+  const now = (Date.now() + seconds) / 1000; //In order to convert to Unix date format we divide.
+  return now > exp; //This means the token has expired, if not, the token is still valid, it shall return a false.
 }
