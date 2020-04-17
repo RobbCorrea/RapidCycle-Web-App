@@ -17,7 +17,7 @@ export default function SignIn() {
   const { Content } = Layout;
   const { TabPane } = Tabs;
 
-  if (getAccessTokenApi) {
+  if (getAccessTokenApi()) {
     return <Redirect to="/admin" />;
   }
 

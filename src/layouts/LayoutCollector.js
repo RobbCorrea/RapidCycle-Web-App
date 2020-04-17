@@ -18,20 +18,15 @@ import "../scss/LayoutCollector.scss";
 
 export default function LayoutCollector({ routes }) {
   //Or const {routes} = props;
-  const { Header, Content, Footer } = Layout;
   const [menuCollapsed, setMenuCollapsed] = useState(true);
+  const { Header, Content, Footer } = Layout;
   //Means user is not logged in. But if it's truthy, the user's logged in.
   //The hooks returns all the data inside the token. Name, email, role, etc.
   //user holds the object with all the user data.
   const { user, isLoading } = useAuth();
 
-  /* console.log(user);
-  console.log(isLoading); */
-
-  /*   const accessToken = getAccessTokenApi();
-  console.log("accessToken" + accessToken);
-  const refreshToken = getRefreshTokenApi();
-  console.log("refreshToken" + refreshToken); */
+  console.log(user);
+  console.log(isLoading);
 
   if (!user && !isLoading) {
     return (

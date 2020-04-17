@@ -6,13 +6,19 @@ import {
   MenuUnfoldOutlined,
   PoweroffOutlined
 } from "@ant-design/icons";
+import { logout } from "../../../api/auth";
 import RCLeafLogo from "../../../assets/images/smallDiamondLeaf.png";
 //SCSS
 import "../../../scss/MenuTop.scss";
 
 function MenuTop(props) {
-  console.log(props);
   const { menuCollapsed, setMenuCollapsed } = props;
+
+  const logoutUser = () => {
+    logout();
+    window.location.reload();
+  };
+
   return (
     <div className="menu-top">
       <div className="menu-top__left">
@@ -28,12 +34,7 @@ function MenuTop(props) {
         </Button>
       </div>
       <div className="menu-top__right">
-        <Button
-          type="link"
-          onClick={() => {
-            console.log("Desconexión");
-          }}
-        >
+        <Button type="link" onClick={logoutUser}>
           <PoweroffOutlined />
         </Button>
       </div>
