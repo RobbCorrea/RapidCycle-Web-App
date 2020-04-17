@@ -1,30 +1,40 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Button } from "antd";
-import { MenuUnfoldOutlined, PoweroffOutlined } from "@ant-design/icons";
+import {
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+  PoweroffOutlined
+} from "@ant-design/icons";
+import { logout } from "../../../api/auth";
 import RCLeafLogo from "../../../assets/images/smallDiamondLeaf.png";
 //SCSS
 import "../../../scss/MenuTop.scss";
 
-function MenuTop() {
+function MenuTop(props) {
+  const { menuCollapsed, setMenuCollapsed } = props;
+
+  const logoutUser = () => {
+    logout();
+    window.location.reload();
+  };
+
   return (
     <div className="menu-top">
       <div className="menu-top__left">
-        <img
-          className="menu-top__left-logo"
-          src={RCLeafLogo}
-          alt="Rapid Cycle Green Leaf Logo"
-        />
-        <Button type="link" onClick={() => console.log("Cliiick!")}>
-          <MenuUnfoldOutlined />
+        <Link to={"/"}>
+          <img
+            className="menu-top__left-logo"
+            src={RCLeafLogo}
+            alt="Rapid Cycle Green Leaf Logo"
+          />
+        </Link>
+        <Button type="link" onClick={() => setMenuCollapsed(!menuCollapsed)}>
+          {menuCollapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
         </Button>
       </div>
       <div className="menu-top__right">
-        <Button
-          type="link"
-          onClick={() => {
-            console.log("Desconexión");
-          }}
-        >
+        <Button type="link" onClick={logoutUser}>
           <PoweroffOutlined />
         </Button>
       </div>
