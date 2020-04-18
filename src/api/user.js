@@ -12,7 +12,6 @@ export function signUpApi(data) {
 
   return fetch(url, params)
     .then(response => {
-      //console.log(response);
       return response.json();
     })
     .then(result => {
@@ -81,8 +80,8 @@ export function getUsersApi(token) {
       return err.message;
     });
 }
-
-/* export function getUsersActiveApi(token, status) {
+//status holds if the user is active or inactive.
+export function getUsersActiveApi(token, status) {
   const url = `${basePath}/${apiVersion}/users-active?active=${status}`;
 
   const params = {
@@ -103,4 +102,4 @@ export function getUsersApi(token) {
     .catch(err => {
       return err.message;
     });
-} */
+}
