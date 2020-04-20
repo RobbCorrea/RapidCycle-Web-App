@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from "react";
-import jwtDecode from "jwt-decode";
+
 import {
   getAccessTokenApi,
   getRefreshTokenApi,
@@ -7,6 +7,7 @@ import {
   logout
 } from "../api/auth";
 
+import jwtDecode from "jwt-decode";
 export const AuthContext = createContext();
 
 export default function AuthProvider(props) {
@@ -30,6 +31,7 @@ function checkUserLogin(setUser) {
   if (!accessToken) {
     const refreshToken = getRefreshTokenApi();
     //!refresh token means it has expired.
+    console.log(refreshToken);
     if (!refreshToken) {
       logout();
       setUser({
