@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useDropzone } from "react-dropzone";
 import {
   Avatar,
   Form,
@@ -10,8 +9,8 @@ import {
   Col,
   notification
 } from "antd";
+import { useDropzone } from "react-dropzone";
 import { UserOutlined, LockOutlined, MailOutlined } from "@ant-design/icons";
-
 import NoAvatar from "../../../../assets/images/avatar.png";
 /* import {
   updateUserApi,
@@ -19,12 +18,11 @@ import NoAvatar from "../../../../assets/images/avatar.png";
   getAvatarApi
 } from "../../../../api/user";
 import { getAccessTokenApi } from "../../../../api/auth"; */
-
 import "../../../../scss/EditUserForm.scss";
 
 export default function EditUserForm(props) {
   //User Form
-  const { user, setIsVisibleModal, setReloadUsers } = props;
+  const { user } = props;
   const [avatar, setAvatar] = useState(null);
   const [userData, setUserData] = useState({
     name: user.name,
@@ -61,8 +59,7 @@ export default function EditUserForm(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [avatar]);
 
-  const updateUser = e => {
-    e.preventDefault();
+  const updateUser = () => {
     console.log(userData);
   };
 
@@ -111,7 +108,7 @@ function EditForm(props) {
   const { Option } = Select;
 
   return (
-    <Form className="form-edit" onSubmit={updateUser}>
+    <Form className="form-edit" onFinish={updateUser}>
       <Row gutter={24}>
         <Col span={12}>
           <Form.Item>
