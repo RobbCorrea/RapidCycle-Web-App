@@ -12,7 +12,8 @@ import {
   CheckOutlined,
   EditOutlined,
   StopOutlined,
-  DeleteOutlined
+  DeleteOutlined,
+  UserAddOutlined
 } from "@ant-design/icons";
 //Components
 import Modal from "../../../Modal";
@@ -37,16 +38,21 @@ export default function ListUsers(props) {
 
   return (
     <div className="list-users">
-      <div className="list-users__switch">
-        <Switch
-          defaultChecked
-          onChange={() => setViewUsersActives(!viewUsersActives)}
-        />
-        <span>
-          {viewUsersActives ? "Usuarios activos" : "Usuarios inactivos"}
-        </span>
+      <div className="list-user__header">
+        <div className="list-users__header-switch">
+          <Switch
+            defaultChecked
+            onChange={() => setViewUsersActives(!viewUsersActives)}
+          />
+          <span>
+            {viewUsersActives ? "Usuarios activos" : "Usuarios inactivos"}
+          </span>
+        </div>
+        <Button type="primary" onClick={() => console.log("Creando usuario")}>
+          Nuevo usuario
+          <UserAddOutlined />
+        </Button>
       </div>
-
       {viewUsersActives ? (
         <UsersActive
           usersActive={usersActive}
@@ -149,10 +155,9 @@ function UserActive(props) {
   const showDeleteConfirm = () => {
     const accessToken = getAccessTokenApi();
 
-    // eslint-disable-next-line no-restricted-globals
-    confirm({
+    window.confirm({
       title: "Deleting user. Eliminando usuario",
-      content: `Are you sure?¿Estas seguro que quieres eliminar a ${user.email}?`,
+      content: `Are you sure? ¿Estas seguro que quieres eliminar a ${user.email}?`,
       okText: "Eliminar",
       okType: "danger",
       cancelText: "Cancelar",
@@ -162,7 +167,7 @@ function UserActive(props) {
             notification["success"]({
               message: response
             });
-            //setReloadUsers(true);
+            setReloadUsers(true);
           })
           .catch(err => {
             notification["error"]({
@@ -245,13 +250,39 @@ function UserInactive(props) {
       });
   };
 
+  const showDeleteConfirm = () => {
+    const accessToken = getAccessTokenApi();
+
+    window.confirm({
+      title: "Deleting user. Eliminando usuario",
+      content: `Are you sure? ¿Estas seguro que quieres eliminar a ${user.email}?`,
+      okText: "Eliminar",
+      okType: "danger",
+      cancelText: "Cancelar",
+      onOk() {
+        deleteUserApi(accessToken, user._id)
+          .then(response => {
+            notification["success"]({
+              message: response
+            });
+            setReloadUsers(true);
+          })
+          .catch(err => {
+            notification["error"]({
+              message: err
+            });
+          });
+      }
+    });
+  };
+
   return (
     <List.Item
       actions={[
         <Button type="primary" onClick={activateUser}>
           <CheckOutlined />
         </Button>,
-        <Button type="danger" onClick={console.log("showDeleteConfirm")}>
+        <Button type="danger" onClick={showDeleteConfirm}>
           <DeleteOutlined />
         </Button>
       ]}
