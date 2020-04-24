@@ -41,8 +41,8 @@ function MenuSider(props) {
             <span className="nac-text">Menú</span>
           </Link>
         </Menu.Item>
-        <Menu.Item key="/admin/courses">
-          <Link to="/admin/courses">
+        <Menu.Item key="/admin/materials">
+          <Link to="/admin/materials">
             <BookOutlined />
             <span className="nac-text">Cursos</span>
           </Link>

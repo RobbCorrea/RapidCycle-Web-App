@@ -87,7 +87,7 @@ export function addMenuApi(token, menu) {
     });
 }
 
-/* export function deleteMenuApi(token, menuId) {
+export function deleteMenuApi(token, menuId) {
   const url = `${basePath}/${apiVersion}/delete-menu/${menuId}`;
 
   const params = {
@@ -108,4 +108,4 @@ export function addMenuApi(token, menu) {
     .catch(err => {
       console.log(err);
     });
-} */
+}

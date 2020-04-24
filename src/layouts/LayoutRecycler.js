@@ -1,22 +1,25 @@
 //LayoutRecycler.js is Basic or LayoutBasic
 import React from "react";
-import { Layout } from "antd";
-
-//Importing CSS
-import "../scss/LayoutRecycler.scss";
+import { Layout, Row, Col } from "antd";
+//Components
+import MenuTop from "../components/Web/MenuTop";
 import LoadRoutes from "../components/LoadRoutes";
+//SCSS
+import "../scss/LayoutRecycler.scss";
 
 export default function LayoutRecycler({ routes }) {
-  const { Content, Footer } = Layout;
+  const { Footer } = Layout;
   return (
-    <Layout>
-      <h2>Menu Sider for Recycler...</h2>
-      <Layout>
-        <Content>
-          <LoadRoutes routes={routes} />
-        </Content>
-        <Footer>Welcome to your very own RapidCycle</Footer>
-      </Layout>
-    </Layout>
+    <>
+      <Row>
+        <Col lg={4} />
+        <Col lg={16}>
+          <MenuTop />
+        </Col>
+        <Col lg={4} />
+      </Row>
+      <LoadRoutes routes={routes} />
+      <Footer> Eye in the Sky Technologies RapidCycle </Footer>
+    </>
   );
 }
