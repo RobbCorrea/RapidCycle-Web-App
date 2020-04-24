@@ -3,11 +3,7 @@ import { Switch, List, Button, Modal as ModalAntd, notification } from "antd";
 import { DeleteOutlined, EditOutlined, PlusOutlined } from "@ant-design/icons";
 import Modal from "../../../Modal";
 import DragSortableList from "react-drag-sortable";
-import {
-  updateMenuApi,
-  activateMenuApi,
-  deleteMenuApi
-} from "../../../../api/menu";
+import { updateMenuApi, activateMenuApi } from "../../../../api/menu";
 import { getAccessTokenApi } from "../../../../api/auth";
 import AddMenuWebForm from "../AddMenuWebForm";
 //import EditMenuWebForm from "../EditMenuWebForm";

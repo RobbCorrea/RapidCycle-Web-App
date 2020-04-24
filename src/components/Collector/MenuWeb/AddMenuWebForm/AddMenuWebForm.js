@@ -11,9 +11,38 @@ export default function AddMenuWebForm(props) {
   const [menuWebData, setMenuWebData] = useState({});
 
   const addMenu = event => {
-    event.preventDefault();
     console.log("Creando menú... ");
     console.log(menuWebData);
+    let finalData = {
+      title: menuWebData.title,
+      url: (menuWebData.http ? menuWebData.http : "http://") + menuWebData.url
+    };
+    if (!finalData.title || !finalData.url || !menuWebData.url) {
+      notification["error"]({
+        message:
+          "All fields must be filled. / Todos los campos son obligatorios."
+      });
+    } else {
+      const accessToken = getAccessTokenApi();
+      finalData.active = false;
+      finalData.order = 1000;
+
+      addMenuApi(accessToken, finalData)
+        .then(response => {
+          notification["success"]({
+            message: response
+          });
+          setIsVisibleModal(false);
+          setReloadMenuWeb(true);
+          setMenuWebData({});
+          finalData = {};
+        })
+        .catch(() => {
+          notification["error"]({
+            message: "Error en el servidor."
+          });
+        });
+    }
   };
 
   return (
@@ -42,7 +71,7 @@ function AddForm(props) {
   );
 
   return (
-    <Form className="form-add" onSubmit={addMenu}>
+    <Form className="form-add" onFinish={addMenu}>
       <Form.Item>
         <Input
           prefix={<FontSizeOutlined />}
@@ -71,38 +100,3 @@ function AddForm(props) {
     </Form>
   );
 }
-
-/* 
-  const addMenu = event => {
-    event.preventDefault();
-    let finalData = {
-      title: menuWebData.title,
-      url: (menuWebData.http ? menuWebData.http : "http://") + menuWebData.url
-    };
-
-    if (!finalData.title || !finalData.url || !menuWebData.url) {
-      notification["error"]({
-        message: "Todos los campos son obligatorios."
-      });
-    } else {
-      const accessToken = getAccessTokenApi();
-      finalData.active = false;
-      finalData.order = 1000;
-
-      addMenuApi(accessToken, finalData)
-        .then(response => {
-          notification["success"]({
-            message: response
-          });
-          setIsVisibleModal(false);
-          setReloadMenuWeb(true);
-          setMenuWebData({});
-          finalData = {};
-        })
-        .catch(() => {
-          notification["error"]({
-            message: "Error en el servidor."
-          });
-        });
-    }
-  }; */

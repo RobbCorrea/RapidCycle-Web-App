@@ -12,8 +12,6 @@ export default function EditUserForm(props) {
   const [userData, setUserData] = useState({});
 
   const addUser = event => {
-    event.preventDefault();
-
     if (
       !userData.name ||
       !userData.lastname ||
@@ -65,7 +63,7 @@ function AddForm(props) {
   const { Option } = Select;
 
   return (
-    <Form className="form-add" onSubmit={addUser}>
+    <Form className="form-add" onFinish={addUser}>
       <Row gutter={24}>
         <Col span={12}>
           <Form.Item>
