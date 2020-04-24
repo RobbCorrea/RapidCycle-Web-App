@@ -33,8 +33,8 @@ export function signUpApi(data) {
 
 export function singInApi(data) {
   const url = `${basePath}/${apiVersion}/sign-in`;
-  console.log(data);
-  console.log(url);
+  /* console.log(data);
+  console.log(url); */
   const params = {
     method: "POST",
     body: JSON.stringify(data),

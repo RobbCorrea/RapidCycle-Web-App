@@ -6,7 +6,7 @@ import routes from "../../../config/routes.js";
 import RouteWithSubRoutes from "../../RouteWSubroutes"; */
 //Ant Design Components
 import { Layout, Menu } from "antd";
-import { HomeOutlined, UserOutlined } from "@ant-design/icons";
+import { HomeOutlined, UserOutlined, MenuOutlined } from "@ant-design/icons";
 //SCSS
 import "../../../scss/CollectorSider.scss";
 
@@ -31,6 +31,12 @@ function MenuSider(props) {
           <Link to={"/admin/users"}>
             <UserOutlined />
             <span className="nac-text">Tus Recolectores</span>
+          </Link>
+        </Menu.Item>
+        <Menu.Item key="/admin/menu">
+          <Link to={"/admin/menu"}>
+            <MenuOutlined />
+            <span className="nac-text">Menu</span>
           </Link>
         </Menu.Item>
       </Menu>
