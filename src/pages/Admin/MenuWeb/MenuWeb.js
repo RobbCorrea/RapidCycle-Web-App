@@ -8,7 +8,6 @@ export default function MenuWeb() {
 
   useEffect(() => {
     getMenuApi().then(response => {
-      console.log(response);
       setMenu(response.menu);
     });
     setReloadMenuWeb(false);

@@ -31,7 +31,6 @@ function checkUserLogin(setUser) {
   if (!accessToken) {
     const refreshToken = getRefreshTokenApi();
     //!refresh token means it has expired.
-    console.log(refreshToken);
     if (!refreshToken) {
       logout();
       setUser({

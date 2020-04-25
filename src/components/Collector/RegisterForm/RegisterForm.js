@@ -76,8 +76,6 @@ function RegisterForm() {
 
   //UPDATE
   const register = async e => {
-    /*  console.log("Formulario enviado");
-        console.log(inputs); */
     //const { email, password, repeatPassword, privacyPolicy } = formValid;
     const emailVal = inputs.email;
     const passwordVal = inputs.password;
@@ -96,7 +94,7 @@ function RegisterForm() {
       } else {
         //Establishing connection with the API & registering the user.
         const result = await signUpApi(inputs);
-        //console.log(result);
+
         if (!result.ok) {
           notification["error"]({
             message: result.message

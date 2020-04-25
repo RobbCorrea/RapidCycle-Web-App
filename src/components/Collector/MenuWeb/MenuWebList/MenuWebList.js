@@ -23,8 +23,6 @@ export default function MenuWebList(props) {
   const [modalTitle, setModalTitle] = useState("");
   const [modalContent, setModalContent] = useState(null);
 
-  //console.log(listItems);
-
   useEffect(() => {
     const listItemsArray = [];
     menu.forEach(item => {

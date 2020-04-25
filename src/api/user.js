@@ -33,8 +33,6 @@ export function signUpApi(data) {
 
 export function singInApi(data) {
   const url = `${basePath}/${apiVersion}/sign-in`;
-  /* console.log(data);
-  console.log(url); */
   const params = {
     method: "POST",
     body: JSON.stringify(data),
@@ -45,12 +43,9 @@ export function singInApi(data) {
 
   return fetch(url, params)
     .then(response => {
-      console.log(response);
       return response.json();
     })
     .then(result => {
-      console.log(result);
-
       return result;
     })
     .catch(err => {

@@ -25,9 +25,6 @@ export default function LayoutCollector({ routes }) {
   //user holds the object with all the user data.
   const { user, isLoading } = useAuth();
 
-  /*   console.log(user);
-  console.log(isLoading); */
-
   if (!user && !isLoading) {
     return (
       <>
