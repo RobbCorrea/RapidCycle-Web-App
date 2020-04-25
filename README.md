@@ -83,7 +83,7 @@ Password: recycle<br />
 Surf our growing site. You may find useful information<br />
 such as the daily cost of valuable scraps in Mexico.<br />
 
-### This repository hold the frontend code to RapidCycle Web App.
+### This repository holds the frontend code to RapidCycle Web App.
 If you wish to checkout the backend code, please proceed to
 this repo.
 https://github.com/RobbCorrea/RapidCycleBackend
