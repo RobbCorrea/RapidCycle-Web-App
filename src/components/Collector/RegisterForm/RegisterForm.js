@@ -5,7 +5,7 @@ import { UserOutlined, LockOutlined } from "@ant-design/icons";
 //API Config
 import { signUpApi } from "../../../api/user";
 //Assets
-import miniLeaf from "../../../assets/images/user.png";
+//import miniLeaf from "../../../assets/images/user.png";
 //SCSS
 import "../../../scss/index.scss";
 import "../../../scss/RegisterFormCollector.scss";

@@ -2,8 +2,8 @@ import React from "react";
 //import { Helmet } from "react-helmet";
 import MainBanner from "../components/Web/MainBanner";
 import HomeMaterials from "../components/Web/HomeMaterials";
-/* import HowMyCoursesWork from "../components/Web/HowMyCoursesWork";
-import ReviewsCourses from "../components/Web/ReviewsCourses"; */
+//import HowRCWorks from "../components/Web/HowRCWorks";
+//import ReviewsCourses from "../components/Web/ReviewsCourses";
 
 export default function Home() {
   return (

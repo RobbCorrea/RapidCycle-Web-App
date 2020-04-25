@@ -75,8 +75,8 @@ export default function HomeMaterials() {
       </Col>
       <Col lg={4} />
       <Col lg={24} className="home-materials__more">
-        <Link to="/materials">
-          <Button>Ver más</Button>
+        <Link to="/appinfo">
+          <Button>Información RC</Button>
         </Link>
       </Col>
     </Row>
