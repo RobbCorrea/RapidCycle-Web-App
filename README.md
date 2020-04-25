@@ -27,7 +27,7 @@ RapidCycle has and will always be free to use<br />
 for homeowners. But for those business owners<br />
 who lay their trust on our team's shoulders<br />
 in order to find better and faster<br />
-recycling routes, for their<br />
+recycling routes for their<br />
 driver fleets, we launch<br />
 RapidCycle Web App.<br />
 <br />
@@ -81,5 +81,5 @@ Password: recycle<br />
 
 ### Notice you don't require admin priviledges to enjoy RapidCycle Web App.
 Surf our growing site. You may find useful information<br />
-such as the daily cost valuable scraps in Mexico.<br />
+such as the daily cost of valuable scraps in Mexico.<br />
 
